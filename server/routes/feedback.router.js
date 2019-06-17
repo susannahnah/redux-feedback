@@ -16,7 +16,7 @@ router.post('/', (req, res) => {
     console.log('POST /');
     pool.query(
         `INSERT INTO "feedback" ("feeling", "understanding", "support", "comments")
-        VALUES ($1, $2, $3, $4);`, [4, 4, 5, 'shitty']
+        VALUES ($1, $2, $3, $4);`, 
     ).then(
         () => {
             console.log('YAY!!!!!!');

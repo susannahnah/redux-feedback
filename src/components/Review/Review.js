@@ -22,6 +22,11 @@ class Review extends Component {
         console.log('testtest', this.props.reduxState);        
         return this.props.reduxState;
     }
+
+    understandingRating() {
+        console.log('testtest', this.props.reduxState);        
+        return this.props.reduxState;
+    }
     
     render () {
         console.log(this.props.reduxState);
@@ -30,12 +35,32 @@ class Review extends Component {
             <>
             <h2>Review Feedback</h2>
             <p>Feeling: {this.props.reduxState.feedbackReducer.feeling}</p>
+            <p>Understanding: {this.props.reduxState.feedbackReducer.understanding}</p>
     
             <button onClick={this.submitFeedback}>Submit Feedback</button> 
             
             </>
         );
     }
+
+    // understandingRating() {
+    //     console.log('testtest', this.props.reduxState);        
+    //     return this.props.reduxState;
+    // }
+    
+    // render () {
+    //     console.log(this.props.reduxState);
+        
+    //     return (
+    //         <>
+    //         <h2>Review Feedback</h2>
+    //         <p>Understanding: {this.props.reduxState.feedbackReducer.understanding}</p>
+    
+    //         <button onClick={this.submitFeedback}>Submit Feedback</button> 
+            
+    //         </>
+    //     );
+    // }
 }
 
 const mapReduxStateToProps = (allFeedback) => ({

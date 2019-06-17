@@ -7,13 +7,20 @@ import logger from 'redux-logger';
 import App from './components/App/App';
 
 
-const feedbackReducer = ( state = {}, action ) => {
-    if (action.type === 'SET_FEELING') {
-        console.log('FEEDBACK FEELINGS', action.payload.feeling);
-        state.feeling = action.payload.feeling;
+const feedbackReducer = (state = {}, action) => {
+    if (action.type === 'SET_FEEDBACK') {
+        console.log('FEEDBACK', action.payload);
+        return {...state, ...action.payload}
     }
     return state;
 }
+
+//    if (action.type === 'SET_UNDERSTANDING') {
+//     console.log('FEEDBACK UNDERSTANDING', action.payload.understanding);
+//     state.understanding = action.payload.understanding;
+// } return state;
+// }
+
 
 // const reviewReducer = ( state = {}, action) => {
 //     if (action.type === 'SUBMIT_FEEDBACK') {
@@ -30,7 +37,7 @@ const storeInstance = createStore(
     applyMiddleware(logger)
 );
 
-ReactDOM.render(<Provider store={storeInstance}><App /></Provider>, 
+ReactDOM.render(<Provider store={storeInstance}><App /></Provider>,
     document.getElementById('root'));
 
 

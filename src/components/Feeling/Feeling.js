@@ -15,11 +15,11 @@ class Feeling extends Component {
     }
 
     handleClick = () => {
-        this.props.dispatch({ type: 'SET_FEELING', payload: this.state });
+        this.props.dispatch({ type: 'SET_FEEDBACK', payload: this.state });
         this.props.history.push('/understanding');
     }
 
-    
+
 
     render () {
         return (
