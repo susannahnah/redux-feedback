@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import axios from 'axios';
+import './review.css';
 
 
 class Review extends Component {
@@ -48,43 +49,36 @@ class Review extends Component {
             <br />
         
             <h2>Review Feedback</h2>
-            <table>
+            <table id='reviewTable'>
                 <thead>
                     <tr>
-                        
+                        <td>I am feeling...</td>
+                        <td>{this.props.reduxState.feedbackReducer.feeling}</td>
                     </tr>
+                    <tr>
+                        <td>I understand...</td>
+                        <td>{this.props.reduxState.feedbackReducer.understanding}</td>
+                    </tr>
+                    <tr>
+                        <td>I am supported...</td>
+                        <td>{this.props.reduxState.feedbackReducer.support}</td>
+                    </tr>
+                    <tr>
+                        <td>Additional complaining...</td>
+                        <td>{this.props.reduxState.feedbackReducer.comments}</td>
+                    </tr>
+                    
 
                 </thead>
             </table>
-            <p>Feeling: {this.props.reduxState.feedbackReducer.feeling}</p> 
-            <p>Understanding: {this.props.reduxState.feedbackReducer.understanding}</p> 
-            <p>Support: {this.props.reduxState.feedbackReducer.support}</p> 
-            <p>Comment: {this.props.reduxState.feedbackReducer.comment}</p> 
+            <br />
+            <br />
 
             <button onClick={this.submitFeedback}>Submit Feedback</button> 
             
             </>
         );
     }
-
-    // understandingRating() {
-    //     console.log('testtest', this.props.reduxState);        
-    //     return this.props.reduxState;
-    // }
-    
-    // render () {
-    //     console.log(this.props.reduxState);
-        
-    //     return (
-    //         <>
-    //         <h2>Review Feedback</h2>
-    //         <p>Understanding: {this.props.reduxState.feedbackReducer.understanding}</p>
-    
-    //         <button onClick={this.submitFeedback}>Submit Feedback</button> 
-            
-    //         </>
-    //     );
-    // }
 }
 
 const mapReduxStateToProps = (allFeedback) => ({

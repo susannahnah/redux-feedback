@@ -26,9 +26,7 @@ class Comments extends Component {
         return (
             <>
             <h3>ANYTHING ELSE YOU WANT TO CRY ABOUT.</h3>
-            <br />
-            <br />
-            <textarea placeholder="sob story goes here" onChange={this.handleComment} value={this.state.comment}/> 
+            <textarea placeholder="sob story goes here" onChange={this.handleComments} value={this.state.comments}/> 
             <br />
             <button onClick={this.handleClick}>Next</button>
             </>

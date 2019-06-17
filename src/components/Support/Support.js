@@ -25,8 +25,6 @@ class Support extends Component {
         return (
             <>
             <h3>IS YOUR HAND BEING HELD.</h3>
-            <br />
-            <br />
             <input placeholder="rate 1 - 5" onChange={this.handleSupport} value={this.state.support}/> 
             <button onClick={this.handleClick}>Next</button>
             </>

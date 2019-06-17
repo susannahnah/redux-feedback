@@ -25,8 +25,6 @@ class Understanding extends Component {
         return (
             <>
             <h3>DO YOU REALLY UNDERSTAND ANYTHING.</h3>
-            <br />
-            <br />
             <input placeholder="rate 1 - 5" onChange={this.handleUnderstanding} value={this.state.understanding}/> 
             <button onClick={this.handleClick}>Next</button>
             </>

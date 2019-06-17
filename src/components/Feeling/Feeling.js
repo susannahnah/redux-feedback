@@ -23,8 +23,6 @@ class Feeling extends Component {
         return (
             <>
             <h3>HOW ARE YOU FEELING.</h3>
-            <br />
-            <br />
             <input placeholder="rate 1 - 5" onChange={this.handleFeeling} value={this.state.feeling}/> 
             <br />
             <br />

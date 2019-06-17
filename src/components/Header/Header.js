@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import './Header.css';
 
 
 class Header extends Component {
@@ -7,8 +8,7 @@ class Header extends Component {
     render () {
         return (
             <>
-            <h1 className="App-title">Feedback!</h1>
-            <h4><i>Don't forget it!</i></h4>
+            <h1 className='header'>Feedback! <br /> (Don't forget it!)</h1>
             </>
         )
     }
