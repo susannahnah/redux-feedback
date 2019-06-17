@@ -10,7 +10,11 @@ class Review extends Component {
 
     submitFeedback = () => {
         console.log('submitFeedback');
-        axios.post('/feedback')
+        axios({
+            method: 'POST',
+            url: '/feedback',
+            data: this.props.reduxState.feedbackReducer,
+        })
             .then(response => {
                 console.log('Submitted feedback', response.data);
             })
@@ -75,7 +79,9 @@ class Review extends Component {
             <br />
 
             {this.props.reduxState.reviewReducer ?<button onClick={this.submitFeedback}>Submit Feeedback</button>:<button onClick={this.submitFeedback}>Incomplete</button> }
-        
+        <pre>
+            {JSON.stringify(this.props.reduxState, null, 2)}
+        </pre>
             </>
         );
     }
