@@ -4,11 +4,33 @@ import { connect } from 'react-redux';
 
 class Comments extends Component {
 
+    state = {
+        comments: '',
+    }
+
+    handleComments = (event) => {
+        this.setState({
+            ...this.state, 
+            comments: event.target.value
+        })
+    }
+
+    handleClick = () => {
+        this.props.dispatch({ type: 'SET_FEEDBACK', payload: this.state });
+        this.props.history.push('/review');
+        console.log(this.props.reduxState);
+
+    }
     render () {
+        
         return (
             <>
-            <h3>HOW ARE YOU FEELING.</h3>
-            `<button onClick={() => { this.props.history.push('/Review') }}>Next</button>`
+            <h3>ANYTHING ELSE YOU WANT TO CRY ABOUT.</h3>
+            <br />
+            <br />
+            <textarea placeholder="sob story goes here" onChange={this.handleComment} value={this.state.comment}/> 
+            <br />
+            <button onClick={this.handleClick}>Next</button>
             </>
         )
     }

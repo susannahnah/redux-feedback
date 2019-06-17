@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 
 class Feeling extends Component {
     state = {
-        feeling: 0,
+        feeling: '',
     }
 
     handleFeeling = (event) => {
@@ -19,15 +19,13 @@ class Feeling extends Component {
         this.props.history.push('/understanding');
     }
 
-
-
     render () {
         return (
             <>
             <h3>HOW ARE YOU FEELING.</h3>
             <br />
             <br />
-            <input placeholder="How Are You Feeling Today?" onChange={this.handleFeeling} value={this.state.feeling}/> 
+            <input placeholder="rate 1 - 5" onChange={this.handleFeeling} value={this.state.feeling}/> 
             <br />
             <br />
             <button onClick={this.handleClick}>Next</button>

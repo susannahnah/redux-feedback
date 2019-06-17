@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 class Support extends Component {
 
     state = {
-        support: 0,
+        support: '',
     }
 
     handleSupport = (event) => {
@@ -21,10 +21,14 @@ class Support extends Component {
     }
 
     render () {
+        
         return (
             <>
-            <h3>HOW ARE YOU FEELING.</h3>
-            `<button onClick={() => { this.props.history.push('/Comments') }}>Next</button>`
+            <h3>IS YOUR HAND BEING HELD.</h3>
+            <br />
+            <br />
+            <input placeholder="rate 1 - 5" onChange={this.handleSupport} value={this.state.support}/> 
+            <button onClick={this.handleClick}>Next</button>
             </>
         )
     }

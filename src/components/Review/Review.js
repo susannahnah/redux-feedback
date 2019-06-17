@@ -27,16 +27,40 @@ class Review extends Component {
         console.log('testtest', this.props.reduxState);        
         return this.props.reduxState;
     }
+
+    supportRating() {
+        console.log('testtest', this.props.reduxState);        
+        return this.props.reduxState;
+    }
+
+    commentRating() {
+        console.log('testtest', this.props.reduxState);        
+        return this.props.reduxState;
+    }
     
     render () {
         console.log(this.props.reduxState);
         
         return (
             <>
+            <br />
+            <br />
+            <br />
+        
             <h2>Review Feedback</h2>
-            <p>Feeling: {this.props.reduxState.feedbackReducer.feeling}</p>
-            <p>Understanding: {this.props.reduxState.feedbackReducer.understanding}</p>
-    
+            <table>
+                <thead>
+                    <tr>
+                        
+                    </tr>
+
+                </thead>
+            </table>
+            <p>Feeling: {this.props.reduxState.feedbackReducer.feeling}</p> 
+            <p>Understanding: {this.props.reduxState.feedbackReducer.understanding}</p> 
+            <p>Support: {this.props.reduxState.feedbackReducer.support}</p> 
+            <p>Comment: {this.props.reduxState.feedbackReducer.comment}</p> 
+
             <button onClick={this.submitFeedback}>Submit Feedback</button> 
             
             </>

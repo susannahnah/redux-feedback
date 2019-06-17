@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 
 class Understanding extends Component {
     state = {
-        understanding: 0,
+        understanding: '',
     }
 
     handleUnderstanding = (event) => {
@@ -17,17 +17,18 @@ class Understanding extends Component {
     handleClick = () => {
         this.props.dispatch({ type: 'SET_FEEDBACK', payload: this.state });
         this.props.history.push('/support');
+        console.log(this.props.reduxState);
+
     }
     render () {
-        console.log(this.props.reduxState);
         
         return (
             <>
             <h3>DO YOU REALLY UNDERSTAND ANYTHING.</h3>
             <br />
             <br />
-            <input placeholder="Do you really understand anything?" onChange={this.handleUnderstanding} value={this.state.understanding}/> 
-            `<button onClick={() => { this.props.history.push('/support') }}>Next</button>`
+            <input placeholder="rate 1 - 5" onChange={this.handleUnderstanding} value={this.state.understanding}/> 
+            <button onClick={this.handleClick}>Next</button>
             </>
         )
     }
