@@ -74,8 +74,8 @@ class Review extends Component {
             <br />
             <br />
 
-            <button onClick={this.submitFeedback}>Submit Feedback</button> 
-            
+            {this.props.reduxState.reviewReducer ?<button onClick={this.submitFeedback}>Submit Feeedback</button>:<button onClick={this.submitFeedback}>Incomplete</button> }
+        
             </>
         );
     }

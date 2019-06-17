@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import './Feeling.css'; 
 
 
 class Feeling extends Component {

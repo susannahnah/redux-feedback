@@ -1,6 +1,9 @@
 .header {
-    padding: 60px;   
-    background-color: rgb(35, 85, 194);
+    background-color: #033076;
+    text-align: center;
+    text-emphasis-color: black;
+    min-height: 60px;
+    padding: 20px;
     color: white;
     margin: 0;
-  }
+}

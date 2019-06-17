@@ -6,6 +6,7 @@ class Comments extends Component {
 
     state = {
         comments: '',
+        submitButon: false,
     }
 
     handleComments = (event) => {
@@ -16,13 +17,19 @@ class Comments extends Component {
     }
 
     handleClick = () => {
-        this.props.dispatch({ type: 'SET_FEEDBACK', payload: this.state });
-        this.props.history.push('/review');
-        console.log(this.props.reduxState);
-
+        this.setState({
+            ...this.state,
+            submitButon: true,
+        }, ()=>{
+            this.props.dispatch({ type: 'SET_FEEDBACK', payload: this.state });
+            this.props.dispatch({ type: 'SUBMIT_FEEDBACK', payload: this.state.submitButon });
+            this.props.history.push('/review');
+            console.log(this.props.reduxState);
+        });
     }
+
     render () {
-        
+        console.log(this.state.submitButon)
         return (
             <>
             <h3>ANYTHING ELSE YOU WANT TO CRY ABOUT.</h3>

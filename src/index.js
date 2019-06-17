@@ -15,24 +15,20 @@ const feedbackReducer = (state = {}, action) => {
     return state;
 }
 
-//    if (action.type === 'SET_UNDERSTANDING') {
-//     console.log('FEEDBACK UNDERSTANDING', action.payload.understanding);
-//     state.understanding = action.payload.understanding;
-// } return state;
-// }
 
 
-// const reviewReducer = ( state = {}, action) => {
-//     if (action.type === 'SUBMIT_FEEDBACK') {
-//         console.log('SUBMIT_FEEDBACK');
-//         return action.payload;
-//     }
-//     return state;
-// }
+const reviewReducer = ( state = false, action) => {
+    if (action.type === 'SUBMIT_FEEDBACK') {
+        console.log('SUBMIT_FEEDBACK');
+        return action.payload;
+    }
+    return state;
+}
 
 const storeInstance = createStore(
     combineReducers({
         feedbackReducer,
+        reviewReducer,
     }),
     applyMiddleware(logger)
 );
