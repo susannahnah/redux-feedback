@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import Axios from 'axios';
+import axios from 'axios';
 
 
 class Review extends Component {
+    state = {
+    }
 
     submitFeedback = () => {
         console.log('submitFeedback');
@@ -16,10 +18,18 @@ class Review extends Component {
             });
     }
 
+    feelingRating() {
+        console.log('testtest', this.props.reduxState);        
+        return this.props.reduxState;
+    }
+    
     render () {
+        console.log(this.props.reduxState);
+        
         return (
             <>
-            <h3>Review Feedback</h3>
+            <h2>Review Feedback</h2>
+            <p>Feeling: {this.props.reduxState.feedbackReducer.feeling}</p>
     
             <button onClick={this.submitFeedback}>Submit Feedback</button> 
             

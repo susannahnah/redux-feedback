@@ -23,7 +23,7 @@ class App extends Component {
             <Route path="/support" exact component={Support} />
             <Route path="/comments" exact component={Comments} />
             <br />
-            <Review />
+            <Route component={Review} path="/" />
           </div>
         </Router>
       </>

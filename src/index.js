@@ -8,9 +8,9 @@ import App from './components/App/App';
 
 
 const feedbackReducer = ( state = {}, action ) => {
-    if (action.type === 'SET_CHARACTERS') {
-        console.log('FEEDBACK FEEDBACK');
-        return action.payload;
+    if (action.type === 'SET_FEELING') {
+        console.log('FEEDBACK FEELINGS', action.payload.feeling);
+        state.feeling = action.payload.feeling;
     }
     return state;
 }
@@ -26,7 +26,6 @@ const feedbackReducer = ( state = {}, action ) => {
 const storeInstance = createStore(
     combineReducers({
         feedbackReducer,
-        reviewReducer
     }),
     applyMiddleware(logger)
 );
