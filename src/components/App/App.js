@@ -14,22 +14,21 @@ import Understanding from '../Understanding/Understanding.js';
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <h1 className="App-title">Feedback!</h1>
-          <h4><i>Don't forget it!</i></h4>
-          <Route component={Header} path="/" />
-          <Route path="/feeling" exact component={Feeling} />
-          <Route path="/understanding" exact component={Understanding} />
-          <Route path="/support" exact component={Support} />
-          <Route path="/comments" exact component={Comments} />
-          <Route path="/review" exact component={Review} />
-
-        </header>
-        <br/>
-      </div>
+      <>
+        <Router>
+          <div className="App">
+            <Route component={Header} path="/" />
+            <Route path="/feeling" exact component={Feeling} />
+            <Route path="/understanding" exact component={Understanding} />
+            <Route path="/support" exact component={Support} />
+            <Route path="/comments" exact component={Comments} />
+            <br />
+            <Review />
+          </div>
+        </Router>
+      </>
     );
   }
 }
 
-export default connect ()(App);
+export default connect()(App);
